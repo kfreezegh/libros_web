@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} PANDA LIBROS - Libros chilos
+{% endblock %}
+{% block head %}
+{{super()}}
+{% endblock %}
+{% block body %}
+        <!--<div>
+            <div><img src = "static/images/logo.png" height="200"></div>
+        </div>-->
+        <div>
+            <ul>
+                <li>Lista Libros por <a href="/por_titulo">titulo</a></li>
+                <li>Lista Libro por <a href="/por_autor">autor</a></li>
+                <li>Lista Libro por <a href="/por_categoria">categoria</a></li>
+                <li>Busca libro</li>
+            </ul>    
+        </div>
+        <div>
+            <h2>Busqueda</h2>
+            <form action="/buscar_libro" method="POST">
+                <label> Buscar: </label>
+                <input type="text" name="texto">
+                <input type="submit" value="buscar"> 
+            </form>
+        </div>
+    {% endblock %}
+</html>

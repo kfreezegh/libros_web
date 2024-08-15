@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %} VA Library - Libros de coleccion
+{% endblock %}
+{% block head %}
+{{super()}}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div>
+        <h1>Lista ordenada por</h1><h2>{{orden}}</h2>
+    </div>
+    <div>
+        <table class="table table-striped">
+            <tr>
+                <thead class="thead dark">
+                <th width = "50">Id</th>
+                <th width = "100">Categori­a</th>
+                <th width = "300">Titulo</th>
+                <th width = "100">Autor</th>
+                </thead>
+            </tr>
+            {% for libro in lista %}
+            <tr>
+                <td>{{ libro['id_categoria'] }}</td>
+                <td>{{ dcat[libro.id_categoria] }}</td>
+                <td><a href="/libro/{{libro['id']}}">{{ libro['titulo'] }}</a></td>
+                <td>{{ libro['autor']  }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

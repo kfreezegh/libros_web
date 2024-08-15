@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} VA Library - Libros de coleccion
+{% endblock %}
+{% block head %}
+{{super()}}
+{% endblock %}
+{% block body %}
+
+<div class="container">
+    <div class="container">
+        <img src="{{libro['url_image']}}">
+        <h3>id:{{libro['id']}}</h3>
+        <h3>{{libro['titulo']}}</h3>
+        <h4>{{libro['autor']}}</h4>
+    </div>
+</div>
+{% endblock %}
